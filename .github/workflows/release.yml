@@ -62,7 +62,7 @@ jobs:
         with:
           tag_name: ${{ github.event.inputs.version }}
           body: |
-            `sevenc-nanashi.discord_activity-aux2-v${{ github.event.inputs.version }}.au2pkg.zip`をダウンロードし、AviUtl2のプレビューにドラッグ&ドロップしてください。
+            `sevenc-nanashi.modify_group_num_layers-aux2-v${{ github.event.inputs.version }}.au2pkg.zip`をダウンロードし、AviUtl2のプレビューにドラッグ&ドロップしてください。
           files: |
-            ./release/sevenc-nanashi.discord_activity-aux2-v*.au2pkg.zip
+            ./release/sevenc-nanashi.modify_group_num_layers-aux2-v*.au2pkg.zip
             ./release/catalog.json
