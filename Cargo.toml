@@ -1,10 +1,10 @@
 [package]
-name = "my_aux2_template-aux2"
+name = "modify_group_num_layers-aux2"
 version = "0.1.2"
 edition = "2024"
 
 [lib]
-name = "my_aux2_template_aux2"
+name = "modify_group_num_layers_aux2"
 crate-type = ["cdylib"]
 
 [dependencies]
