@@ -35,7 +35,7 @@ source = "target/release/modify_group_num_layers_aux2.dll"
 [catalog]
 id = "sevenc-nanashi.modify_group_num_layers-aux2"
 name = "modify_group_num_layers.aux2"
-summary = "TODO: プラグイン説明"
+summary = "「対象レイヤー数」をショートカットキーから変更できるようにする汎用プラグイン"
 type = "common"
 description = { type = "url", url = "https://raw.githubusercontent.com/sevenc-nanashi/modify_group_num_layers.aux2/main/README.md" }
 author = "Nanashi."
@@ -46,5 +46,5 @@ license = { type = "MIT", template = false, text = { type = "file", path = "./LI
 [release]
 prebuild = ["cargo about generate ./about.hbs -o ./release/package.txt"]
 package_template = "./release/package.txt"
-package_information = "{name} v{version} / TODO: プラグイン説明"
+package_information = "{name} v{version} / 「対象レイヤー数」をショートカットキーから変更できるようにする汎用プラグイン"
 
