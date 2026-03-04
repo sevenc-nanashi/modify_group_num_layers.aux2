@@ -4,7 +4,7 @@
 
 [![AviUtl2 Catalog](https://aviutl2-catalog-badge.sevenc7c.workers.dev/badge/v/sevenc-nanashi.modify_group_num_layers-aux2)](https://aviutl2-catalog-badge.sevenc7c.workers.dev/package/sevenc-nanashi.modify_group_num_layers-aux2)
 
-グループ制御・画像合成などの「対象レイヤー数」をショートカットキーから変更できるようにするAviUtl2用の拡張編集プラグインです。
+グループ制御・画像合成などの「対象レイヤー数」をショートカットキーから変更できるようにするAviUtl2用の汎用プラグインです。
 
 > [!WARNING]
 > beta35現在、「対象レイヤー数」を変更しても表示が更新されないバグがあります。
