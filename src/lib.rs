@@ -90,7 +90,7 @@ fn get_num_layers_of_object(
     edit: &mut aviutl2::generic::EditSection,
     object: aviutl2::generic::ObjectHandle,
 ) -> aviutl2::AnyResult<u32> {
-    let alias = edit.object(&object).get_alias_parsed()?;
+    let alias = edit.object(object).get_alias_parsed()?;
     let object_0 = alias
         .get_table("Object.0")
         .context("Object.0 テーブルが見つかりません")?;
@@ -106,7 +106,7 @@ fn set_num_layers_of_object(
     object: aviutl2::generic::ObjectHandle,
     num_layers: u32,
 ) -> aviutl2::AnyResult<()> {
-    let object = edit.object(&object);
+    let object = edit.object(object);
     let alias = object.get_alias_parsed()?;
     let object_0 = alias
         .get_table("Object.0")
@@ -184,22 +184,22 @@ impl ModifyGroupNumLayersAux2 {
         }
     }
 
-    #[object(name = "[modify_group_num_layers.aux2] 対象レイヤー数を増やす")]
+    #[object(name = "modify_group_num_layers.aux2\\対象レイヤー数を増やす")]
     fn increment_layers_object(&mut self) -> aviutl2::AnyResult<()> {
         self.increment_layers()
     }
 
-    #[object(name = "[modify_group_num_layers.aux2] 対象レイヤー数を減らす")]
+    #[object(name = "modify_group_num_layers.aux2\\対象レイヤー数を減らす")]
     fn decrement_layers_object(&mut self) -> aviutl2::AnyResult<()> {
         self.decrement_layers()
     }
 
-    #[object(name = "[modify_group_num_layers.aux2] 対象レイヤー数を無制限にする")]
+    #[object(name = "modify_group_num_layers.aux2\\対象レイヤー数を無制限にする")]
     fn set_infinite_object(&mut self) -> aviutl2::AnyResult<()> {
         self.set_infinite()
     }
 
-    #[object(name = "[modify_group_num_layers.aux2] 対象レイヤー数を1にする")]
+    #[object(name = "modify_group_num_layers.aux2\\対象レイヤー数を1にする")]
     fn set_one_object(&mut self) -> aviutl2::AnyResult<()> {
         self.set_one()
     }
