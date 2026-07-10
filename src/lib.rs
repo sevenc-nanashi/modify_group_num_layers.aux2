@@ -184,6 +184,37 @@ impl ModifyGroupNumLayersAux2 {
         }
     }
 
+    #[edit(
+        name = "modify_group_num_layers.aux2\\対象レイヤー数を選択しているオブジェクトに合わせる"
+    )]
+    fn set_to_selected_max(&mut self) -> aviutl2::AnyResult<()> {
+        let max_layer = EDIT_HANDLE.call_read_section(|edit| {
+            let selected_objects = edit.get_selected_objects()?;
+            if selected_objects.is_empty() {
+                anyhow::bail!("オブジェクトが選択されていません");
+            }
+            let mut max_layer = 0;
+            for object in selected_objects {
+                let position = edit.get_object_layer_frame(object)?;
+                if position.layer > max_layer {
+                    max_layer = position.layer;
+                }
+            }
+            Ok(max_layer)
+        })??;
+        self.apply_operation_to_selected_objects(|edit, object| {
+            if get_num_layers_of_object(edit, object).is_err() {
+                // 他のメニューとは違い、対象レイヤー数の値が存在しないオブジェクトが選択される前提なので
+                // 対象レイヤー数の値が存在しないオブジェクトはOkとしてスキップする
+                return Ok(());
+            }
+            let position = edit.get_object_layer_frame(object)?;
+            let layers = max_layer - position.layer;
+            set_num_layers_of_object(edit, object, layers.max(1) as _)?;
+            Ok(())
+        })
+    }
+
     #[object(name = "modify_group_num_layers.aux2\\対象レイヤー数を増やす")]
     fn increment_layers_object(&mut self) -> aviutl2::AnyResult<()> {
         self.increment_layers()
