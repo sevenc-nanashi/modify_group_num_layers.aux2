@@ -1,6 +1,6 @@
-[modify_group_num_layers.aux2]
-modify_group_num_layers.aux2\\対象レイヤー数を増やす=modify_group_num_layers.aux2\\Increase the number of target layers
-modify_group_num_layers.aux2\\対象レイヤー数を減らす=modify_group_num_layers.aux2\\Decrease the number of target layers
-modify_group_num_layers.aux2\\対象レイヤー数を無制限にする=modify_group_num_layers.aux2\\Set the number of target layers to unlimited
-modify_group_num_layers.aux2\\対象レイヤー数を1にする=modify_group_num_layers.aux2\\Set the number of target layers to 1
-modify_group_num_layers.aux2\\対象レイヤー数を選択しているオブジェクトに合わせる=modify_group_num_layers.aux2\\Match the number of target layers to the selected object
+[Menu]
+対象レイヤー数を増やす=Increase the number of target layers
+対象レイヤー数を減らす=Decrease the number of target layers
+対象レイヤー数を無制限にする=Set the number of target layers to unlimited
+対象レイヤー数を1にする=Set the number of target layers to 1
+対象レイヤー数を選択しているオブジェクトに合わせる=Set the number of target layers to match the selected objects

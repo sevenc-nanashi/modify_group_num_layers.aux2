@@ -1,9 +1,6 @@
-[modify_group_num_layers.aux2]
-modify_group_num_layers.aux2\\対象レイヤー数を増やす=
-modify_group_num_layers.aux2\\対象レイヤー数を減らす=
-modify_group_num_layers.aux2\\対象レイヤー数を無制限にする=
-modify_group_num_layers.aux2\\対象レイヤー数を1にする=
-[modify_group_num_layers.aux2] 対象レイヤー数を増やす=
-[modify_group_num_layers.aux2] 対象レイヤー数を減らす=
-[modify_group_num_layers.aux2] 対象レイヤー数を無制限にする=
-[modify_group_num_layers.aux2] 対象レイヤー数を1にする=
+[Menu]
+対象レイヤー数を増やす=
+対象レイヤー数を減らす=
+対象レイヤー数を無制限にする=
+対象レイヤー数を1にする=
+対象レイヤー数を選択しているオブジェクトに合わせる=

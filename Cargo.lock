@@ -13,9 +13,9 @@ dependencies = [
 
 [[package]]
 name = "anyhow"
-version = "1.0.102"
+version = "1.0.104"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f202df86484c868dbad7eaa557ef785d5c66295e41b460ef922eca0723b842c"
+checksum = "330a5ed07fa54e4702c9d6c4174f74427fc0ef6e214bbd677ae50a5099946470"
 
 [[package]]
 name = "autocfg"
@@ -25,9 +25,9 @@ checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 
 [[package]]
 name = "aviutl2"
-version = "0.38.2"
+version = "0.42.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ebdb7e8f0c1cda921735864be8541dc080e58b1c04ec87678183da541ca16a16"
+checksum = "c55235b8abd454b2d4f49406a0cb16ef9d0557993e47fad78628227bb61ec449"
 dependencies = [
  "anyhow",
  "aviutl2-alias",
@@ -53,9 +53,9 @@ dependencies = [
 
 [[package]]
 name = "aviutl2-alias"
-version = "0.38.2"
+version = "0.42.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f71cd81407c7adcc5f11ea362dc99dc32db9bf724d7523f3a55f9fd0ec321fba"
+checksum = "e47f576ed6c22539345cd229697938bd62c806ac30934ed1340fecfbed8c81d4"
 dependencies = [
  "duplicate",
  "indexmap",
@@ -64,9 +64,9 @@ dependencies = [
 
 [[package]]
 name = "aviutl2-macros"
-version = "0.38.2"
+version = "0.42.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "47b29449150cc2854d37e72f0ecfd8c6ba8fb879bf7c864b64be80a3addcf27c"
+checksum = "03958abc3ad9388466cbb9e10ebb2200f360e17e99c7f15b757f4ddbf1d85739"
 dependencies = [
  "decimal-rs",
  "either",
@@ -79,9 +79,9 @@ dependencies = [
 
 [[package]]
 name = "aviutl2-sys"
-version = "0.38.2"
+version = "0.42.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6ecdf423696e663cf110a3b064b295faaa4bdaa799af88e4bbe7569de3449f2"
+checksum = "7918b748647918fa7ad75e6ee2c05076a4ff4fcf57a3d24eab19a1185bb96d21"
 dependencies = [
  "windows-sys",
 ]
@@ -163,9 +163,9 @@ checksum = "91622ff5e7162018101f2fea40d6ebf4a78bbe5a49736a2020649edf9693679e"
 
 [[package]]
 name = "env_filter"
-version = "1.0.1"
+version = "2.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "32e90c2accc4b07a8456ea0debdc2e7587bdd890680d71173a15d4ae604f6eef"
+checksum = "900d271a03799a1ee8d1ca9b19893b48ca674a9284fefcfb85f05e74ed314217"
 dependencies = [
  "log",
  "regex",
@@ -218,9 +218,9 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.14.0"
+version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2b192c782037fadd9cfa75548310488aabdbf3d2da73885b31bd0abd03351285"
+checksum = "8b4baf93f58d4425749ca49a51c50ebab072c5df6994d08fed93541c331481dc"
 dependencies = [
  "either",
 ]
@@ -396,9 +396,9 @@ dependencies = [
 
 [[package]]
 name = "quote"
-version = "1.0.45"
+version = "1.0.47"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "41f2619966050689382d2b44f664f4bc593e129785a36d6ee376ddf37259b924"
+checksum = "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001"
 dependencies = [
  "proc-macro2",
 ]
@@ -497,9 +497,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.117"
+version = "2.0.119"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e665b8803e7b1d2a727f4023456bbbbe74da67099c585258af0ad9c5013b9b99"
+checksum = "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297"
 dependencies = [
  "proc-macro2",
  "quote",
