@@ -40,6 +40,17 @@ impl aviutl2::generic::GenericPlugin for ModifyGroupNumLayersAux2 {
 }
 
 impl ModifyGroupNumLayersAux2 {
+    fn list_selected_objects(&self) -> aviutl2::AnyResult<Vec<aviutl2::generic::ObjectHandle>> {
+        EDIT_HANDLE.call_read_section(|edit| {
+            let mut selected_objects = edit.get_selected_objects()?;
+            if selected_objects.is_empty()
+                && let Some(focused) = edit.get_focused_object()?
+            {
+                selected_objects.push(focused);
+            }
+            Ok(selected_objects)
+        })?
+    }
     fn apply_operation_to_selected_objects<F>(&self, callback: F) -> aviutl2::AnyResult<()>
     where
         F: Fn(
@@ -48,17 +59,12 @@ impl ModifyGroupNumLayersAux2 {
             ) -> aviutl2::AnyResult<()>
             + std::marker::Sync,
     {
+        let selected_objects = self.list_selected_objects()?;
+        if selected_objects.is_empty() {
+            anyhow::bail!("オブジェクトが選択されていません");
+        }
         EDIT_HANDLE.call_edit_section(|edit| {
             let mut errors = Vec::new();
-            let mut selected_objects = edit.get_selected_objects()?;
-            if selected_objects.is_empty()
-                && let Some(focused) = edit.get_focused_object()?
-            {
-                selected_objects.push(focused);
-            }
-            if selected_objects.is_empty() {
-                anyhow::bail!("オブジェクトが選択されていません");
-            }
             tracing::info!(
                 "Applying operation to {} selected objects",
                 selected_objects.len()
@@ -194,11 +200,8 @@ impl ModifyGroupNumLayersAux2 {
         name = "modify_group_num_layers.aux2\\対象レイヤー数を選択しているオブジェクトに合わせる"
     )]
     fn set_to_selected_max(&mut self) -> aviutl2::AnyResult<()> {
+        let selected_objects = self.list_selected_objects()?;
         let max_layer = EDIT_HANDLE.call_read_section(|edit| {
-            let selected_objects = edit.get_selected_objects()?;
-            if selected_objects.is_empty() {
-                anyhow::bail!("オブジェクトが選択されていません");
-            }
             let mut max_layer = 0;
             for object in selected_objects {
                 let position = edit.get_object_layer_frame(object)?;
@@ -206,7 +209,7 @@ impl ModifyGroupNumLayersAux2 {
                     max_layer = position.layer;
                 }
             }
-            Ok(max_layer)
+            anyhow::Ok(max_layer)
         })??;
         self.apply_operation_to_selected_objects(|edit, object| {
             if get_num_layers_of_object(edit, object).is_err() {
