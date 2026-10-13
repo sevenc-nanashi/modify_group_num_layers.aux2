@@ -51,8 +51,13 @@ impl ModifyGroupNumLayersAux2 {
         EDIT_HANDLE.call_edit_section(|edit| {
             let mut errors = Vec::new();
             let mut selected_objects = edit.get_selected_objects()?;
-            if let Some(focused) = edit.get_focused_object()? {
+            if selected_objects.is_empty()
+                && let Some(focused) = edit.get_focused_object()?
+            {
                 selected_objects.push(focused);
+            }
+            if selected_objects.is_empty() {
+                anyhow::bail!("オブジェクトが選択されていません");
             }
             tracing::info!(
                 "Applying operation to {} selected objects",
